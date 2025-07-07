@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodie Bucket List</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+ <link rel="icon" href="./favicon.ico" type="image/png-icon">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 510px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 510px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+      padding: 0 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .overlay-text h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .overlay-text p {
+      font-size: 1rem;
+    }
+
+    .card {
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-top {
+      height: 15rem;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+    
+  .scroll-up-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #423e3e;          
+    text-decoration: none;
+    z-index: 1000;
+    transition: color 0.3s ease;
+    scroll-behavior: smooth;
+  }
+
+  .scroll-up-btn:hover {
+    color: #007bff;       
+  }
+  </style>
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Foodie Hub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#restaurants">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-section">
+  <img src="./Images/background.jpg" alt="Food Dishes" class="hero-image" />
+  <div class="dark-overlay"></div>
+  <div class="overlay-text">
+    <h1>Welcome to Foodie Hub</h1>
+    <p>Order your favorite meals instantly!</p>
+  </div>
+</header>
+
+<section id="restaurants" class="py-5 container">
+  <h2 class="text-center mb-4">Our Restaurants</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/card4.jpg" class="card-img-top" alt="restaurant">
+        <div class="card-body">
+          <h5 class="card-title"><b>Domino's</b></h5>
+          <p class="card-text">Domino’s serves hot, delicious pizzas made with quality ingredients, famous for fast delivery and bold flavors.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/mdonalds.jpg" class="card-img-top" alt="restaurant">
+        <div class="card-body">
+          <h5 class="card-title"><b>McDonald’s</b></h5>
+          <p class="card-text">A global favorite known for its iconic burgers, crispy fries, and quick, tasty meals for all ages.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/kfc.jpg" class="card-img-top" alt="restaurant">
+        <div class="card-body">
+          <h5 class="card-title"><b>KFC</b></h5>
+          <p class="card-text"> KFC is a popular fast-food place known for its high-quality, flavorful fried chicken.</p>
+          <a href="#menu" class="btn btn-primary">view Menu</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/card 1 restaurant.jpg" class="card-img-top" alt="restaurant">
+        <div class="card-body">
+          <h5 class="card-title"><b>Cheezious</b></h5>
+          <p class="card-text">A popular fast-food restaurant known for its cheesy, flavorful dishes and vibrant atmosphere.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="py-5 container">
+  <h2 class="text-center mb-4">Menu</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/card1.jpg" class="card-img-top" alt="pizza">
+        <div class="card-body">
+          <h5 class="card-title"><b>Crown Crust Pizza</b></h5>
+          <p class="card-text">A bold twist on classic pizza, featuring a crown-shaped crust stuffed with tasty surprises.</p>
+          <div class="d-flex justify-content-between align-items-center">
+          <p class="fw-bold">$60.99</p>
+          <a href="#order">
+          <span class="badge bg-success">Available</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/fired chicken.jpg" class="card-img-top" alt="fired chicken">
+        <div class="card-body">
+          <h5 class="card-title"><b>Juicy fried chicken</b></h5>
+          <p class="card-text">Crispy, juicy fried chicken seasoned with KFC’s secret blend of 11 herbs and spices.</p>
+          <div class="d-flex justify-content-between align-items-center">
+          <p class="fw-bold">$75.60</p>
+           <a href="#order">
+          <span class="badge bg-success">Available</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/zinger.jpg" class="card-img-top" alt="zinger">
+        <div class="card-body">
+          <h5 class="card-title"><b>Zinger burger</b></h5>
+          <p class="card-text">A crispy, spicy chicken fillet stacked in a soft bun with fresh lettuce and creamy mayo.</p>
+             <div class="d-flex justify-content-between align-items-center">
+          <p class="fw-bold">$100.12</p>
+          <a href="#order">
+          <span class="badge bg-success">Available</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Images/pasta.jpg" class="card-img-top" alt="pasta">
+        <div class="card-body">
+          <h5 class="card-title"><b>Pasta</b></h5>
+          <p class="card-text">Deliciously creamy pasta tossed with rich sauce and fresh ingredients for a perfect bite.</p>
+         <div class="d-flex justify-content-between align-items-center">
+          <p class="fw-bold">$50.40</p>
+          <a href="#order">
+          <span class="badge bg-success">Available</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Order Form -->
+  <section id="order" class="py-5 container">
+    <h2 class="text-center mb-4">Place Your Order</h2>
+    <form action="#">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Customer Name" required>
+        </div>
+        <div class="col-md-6">
+          <input type="tel" class="form-control" placeholder="Phone Number" required>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select">
+            <option selected>Select Restaurant</option>
+            <option>Domino's</option>
+            <option>McDonald’s</option>
+            <option>KFC</option>
+            <option>Cheezious</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="dish1">
+            <label class="form-check-label" for="dish1">Juicy fried chicken (1)</label>
+          </div>
+         <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="dish2">
+            <label class="form-check-label" for="dish1">Pasta (1)</label>
+          </div>
+        </div>
+         <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="dish3">
+            <label class="form-check-label" for="dish1">Crown Crust Pizza (1)</label>
+          </div>
+      </div>
+       <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="dish4">
+            <label class="form-check-label" for="dish1">Zinger burger (1)</label>
+          </div>
+       </div>
+        </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-success">Submit Order</button>
+      </div>
+    </form>
+  </section>
+
+<!-- About Section -->
+  <section id="about" class="py-5 container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <img src="./Images/about section.jpg" alt="About Foodie Hub" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h2>About Foodie Hub</h2>
+        <p>Foodie Hub is your go-to platform for ordering tasty meals from top local restaurants. From fast food to traditional dishes, we make it easy to browse menus, place orders, and enjoy quick delivery — all in just a few taps.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Separator Line -->
+<hr style="border: none; border-top: 1px solid #000000; margin: 0;">
+<!-- Contact Section / Footer -->
+<section id="contact" class="py-4" style="color: #555;">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <!-- Contact Info -->
+    <div class="mb-3 mb-md-0 text-center text-md-start">
+      <p class="mb-1">Email: <a href="mailto:contact@foodiehub.com">contact@foodiehub.com</a></p>
+      <p class="mb-1">Phone: +93766643814</p>
+      <p class="mb-0">Address: Main Street, Kabul, Afghanistan</p>
+    </div>
+    <!-- Social Icons -->
+    <div class="text-center text-md-end">
+      <i class="bi bi-pinterest me-3"></i>
+      <i class="bi bi-facebook me-3"></i>
+      <i class="bi bi-twitter me-3"></i>
+      <i class="bi bi-instagram me-3"></i>
+    </div>
+  </div>
+</section>
+
+
+<a href="#top" class="scroll-up-btn">
+  <i class="bi bi-arrow-up-circle"></i>
+</a>
+
+</body>
+</html>
